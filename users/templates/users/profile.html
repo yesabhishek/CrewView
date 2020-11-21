@@ -1,0 +1,28 @@
+{% extends "Blog/base.html" %} {% load crispy_forms_tags %} {% block content %}
+<div class="content-section">
+  <div class="media">
+    <!-- <img class="account-covr-img" src="{{ user.profile.cover_img.url }}" > -->
+    <img
+      class="rounded-circle account-img"
+      src="{{ user.profile.image.url }}"
+    />
+
+    <br />
+    <div class="media-body">
+      <h2 class="account-heading">{{ user.username }}</h2>
+      <hr />
+      <p class="text-secondary"><i>{{ user.email }}</i></p>
+      <p class="text-secondary">{{ user.profile.dob }}</p>
+      <p class="text-secondary">{{ user.profile.bio }}</p>
+      <p class="text-secondary">{{ user.posts.author }}</p>
+      <!-- <img
+        class="account-img"
+        src="{{ user.profile.cover_img.url }}"
+      /> -->
+
+      <p class="text-secondary"></p>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

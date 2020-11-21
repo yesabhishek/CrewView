@@ -1,0 +1,32 @@
+{% extends "Blog/base.html" %} {% block content %}
+<main>
+  <h1>Hello,{{ user.username }} <span class="wave-emoji">👋🏼</span></h1>
+  <br />
+  <div>
+    <br />
+
+    <h4>
+      <a class="readnow" href="{% url  'update-profile' %}">Click</a> for
+      changing the Profile Settings
+    </h4>
+    <br />
+
+    <h4>
+      <a class="readnow" href="#">Click</a> for
+      Deleting your Account.
+    </h4>
+    <br />
+
+    <h4>
+      <a class="readnow" href="#">Click</a> for
+      changing the Profile Settings
+    </h4>
+    <br />
+
+    <h4>
+      <a class="readnow" href="#">Click</a> for
+      changing the Profile Settings
+    </h4>
+  </div>
+</main>
+{% endblock %}
