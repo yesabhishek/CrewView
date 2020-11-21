@@ -10,7 +10,7 @@ DEBUG = True
 SECRET_KEY = '00bfaf2afa0c87db27f8e86bee4f3522b0075621fa59debc'
 
 
-ALLOWED_HOSTS = [ 'crewview.herokuapp.com']
+ALLOWED_HOSTS = ['crewview.herokuapp.com']
 
 
 INSTALLED_APPS = [
@@ -20,11 +20,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Blog',
-    'users',
+    'Blog.apps.BlogConfig',
+    'users.apps.UsersConfig',
     'crispy_forms',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 
-    
 ]
 
 MIDDLEWARE = [
@@ -65,6 +69,13 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = [
+
+    'django.contrib.auth.backends.ModelBackend',
+
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+]
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -82,7 +93,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Kolkata'
@@ -95,8 +105,8 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL  = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
