@@ -1,5 +1,7 @@
 
 import os
+import django_heroku
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -8,7 +10,7 @@ DEBUG = True
 SECRET_KEY = '00bfaf2afa0c87db27f8e86bee4f3522b0075621fa59debc'
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', 'crewview.herokuapp.com']
 
 
 INSTALLED_APPS = [
@@ -37,6 +39,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 SITE_ID = 1
 ROOT_URLCONF = 'YearBook.urls'
@@ -112,3 +115,6 @@ LOGIN_REDIRECT_URL = 'blog-home'
 
 LOGIN_URL = 'login'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())

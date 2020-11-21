@@ -1,1 +1,1 @@
-web: gunicorn Dashboard.wsgi
+web: gunicorn YearBook.wsgi
