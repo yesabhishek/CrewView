@@ -10,7 +10,7 @@ DEBUG = True
 SECRET_KEY = '00bfaf2afa0c87db27f8e86bee4f3522b0075621fa59debc'
 
 
-ALLOWED_HOSTS = ['*', 'crewview.herokuapp.com']
+ALLOWED_HOSTS = [ 'crewview.herokuapp.com']
 
 
 INSTALLED_APPS = [
@@ -20,14 +20,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Blog.apps.BlogConfig',
-    'users.apps.UsersConfig',
-    'django.contrib.sites',
+    'Blog',
+    'users',
     'crispy_forms',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google', 
+
     
 ]
 
@@ -69,13 +65,6 @@ DATABASES = {
     }
 }
 
-AUTHENTICATION_BACKENDS = [
-        
-    'django.contrib.auth.backends.ModelBackend',
-
-    'allauth.account.auth_backends.AuthenticationBackend',
-    
-]
 
 AUTH_PASSWORD_VALIDATORS = [
     {
