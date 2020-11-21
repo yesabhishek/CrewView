@@ -22,8 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Blog.apps.BlogConfig',
     'users.apps.UsersConfig',
+    
     'crispy_forms',
-    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

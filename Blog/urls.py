@@ -7,9 +7,9 @@ from django.shortcuts import render
 from django.contrib import admin
 
 
-admin.site.site_title = "Yes Network"
-admin.site.site_header = "Yes Network"
-admin.site.index_title = "Welcome folks"
+admin.site.site_title = "Crew View"
+admin.site.site_header = "Crew View"
+admin.site.index_title = "Welcome to Crew View folks!"
 
 
 urlpatterns = [
