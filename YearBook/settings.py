@@ -5,10 +5,10 @@ import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-DEBUG = True
+DEBUG = (os.environ.get('Debug_Value') == 'True')
 
-SECRET_KEY = '00bfaf2afa0c87db27f8e86bee4f3522b0075621fa59debc'
 
+SECRET_KEY = os.environ.get('Secret_CrewView')
 
 ALLOWED_HOSTS = ['crewview.herokuapp.com']
 
