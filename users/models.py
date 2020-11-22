@@ -14,7 +14,9 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
-    def save(self, *args, **kwargs):
+# Resizing using Pillow 
+
+"""     def save(self, *args, **kwargs):
         super(Profile, self).save(*args, **kwargs)
 
         img = Image.open(self.image.path)
@@ -31,4 +33,4 @@ class Profile(models.Model):
             c_img.save(self.cover_img.path)
 
 
-    
+     """

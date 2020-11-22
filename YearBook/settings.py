@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = (os.environ.get('Debug_Value') == 'True')
 
 
-SECRET_KEY = os.environ.get('Secret_CrewView')
+SECRET_KEY = 'fb7e0061d75f75807d9acc89260499683bca1051466e8bab'
 
 ALLOWED_HOSTS = ['crewview.herokuapp.com']
 
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'storages'
 
 ]
 
@@ -117,3 +118,26 @@ LOGIN_URL = 'login'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = os.environ.get('User_Email')
+EMAIL_HOST_PASSWORD  = os.environ.get('User_Password')
+
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECCRET_ACCESS_KEY = os.environ.get('AWS_SECCRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+
+AWS_S3_SIGNATURE_VERSION = "s3v4"
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = 'public-read-write'
+AWS_S3_REGION_NAME = "ap-south-1"
+
+
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
