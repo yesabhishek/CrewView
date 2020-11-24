@@ -20,9 +20,9 @@
             <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
           </div>
           <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-          {% if post.post_image.url != Null %}
+         <!--  {% if post.post_image.url != Null %}
           <img class="postimage" src ='{{ post.post_image.url }}'>
-        {% endif %}
+        {% endif %} -->
           <p class="article-content">{{ post.message }}</p>
           <!-- <a class="readnow" href="{% url 'post-detail' post.id %}"><small>Read more</small></a> -->
           <div><small class="text-muted">{{ post.likes.all.count }}⚡on this post </small> </div>
