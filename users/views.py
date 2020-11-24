@@ -7,7 +7,7 @@ from django.contrib import messages
 # We have implemented our own Registration form by extending the default UserCreationForm
 from .forms import UserRegistrationForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
-
+import datetime
 
 def register(request):
     if request.method == 'POST':
@@ -29,6 +29,7 @@ def register(request):
 
 @login_required
 def profile(request):
+    
     return render(request, 'users/profile.html', {'title': 'Profile'})
 
 

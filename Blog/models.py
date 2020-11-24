@@ -2,15 +2,20 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from PIL import Image
 
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
     message = models.CharField(max_length=400)
+    post_image = models.ImageField(upload_to='post_image', blank=True)
     # On updating the post, the date will be updated as well.
     date_posted = models.DateTimeField(default=timezone.now)
-    # If authir is deleted the post will be deleted as well.
+    # If author is deleted the post will be deleted as well.
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+
+
     likes = models.ManyToManyField(
         User, related_name='blog_like', default=None, blank=True)
 

@@ -14,7 +14,7 @@
     <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
     <div class="media-body">
       <div class="article-metadata">
-        <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+        <a class="mr-2 readnow" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
         <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
       </div>
       <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
@@ -26,9 +26,9 @@
         <form action="{% url 'like-post' %}" method="POST">
           {% csrf_token %}
           {% if user not in post.likes.all %}
-            <button type="submit" class="btn btn-outline-primary" name="post_id" value="{{ post.id }}" >Like</button> 
+            <button type="submit" class="btn btn-outline-primary" name="post_id" value="{{ post.id }}" >⚡</button> 
           {% else %}
-            <button type="submit" class="btn btn-outline-warning" name="post_id" value="{{ post.id }}" >Unlike</button> 
+            <button type="submit" class="btn btn-outline-warning" name="post_id" value="{{ post.id }}" >❌</button> 
           {% endif %}
           
           <button type="button" class="btn btn-outline-dark">Commment</button>

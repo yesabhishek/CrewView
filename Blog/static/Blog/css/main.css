@@ -17,6 +17,7 @@ body {
   background-color: #071E22;
   margin: 0;
   padding: 0;
+  padding-top: 0;
   scroll-behavior: smooth;
   }
 
@@ -411,4 +412,22 @@ a.article-title:hover {
 visibility: hidden;
    
   }
+}
+
+.postimage{
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  border:none;
+
+}
+
+.coverimg{
+  justify-content:center;
+  align-content: center;
+  
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  
 }
