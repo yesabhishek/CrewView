@@ -5,8 +5,8 @@ import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-DEBUG = True
-""" (os.environ.get('Debug_Value') == 'True') """
+DEBUG = (os.environ.get('Debug_Value') == 'True')
+
 
 SECRET_KEY = os.environ.get('Secret_CrewView')
 
@@ -24,11 +24,15 @@ INSTALLED_APPS = [
     'Blog.apps.BlogConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+
     'django.contrib.sites',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+    
     'storages'
 
 ]
@@ -112,7 +116,7 @@ MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_REDIRECT_URL = '/'
 
 LOGIN_URL = 'login'
 
@@ -126,7 +130,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = os.environ.get('User_Email')
-EMAIL_HOST_PASSWORD  = os.environ.get('User_Password')
+EMAIL_HOST_PASSWORD = os.environ.get('User_Password')
 
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
@@ -140,5 +144,5 @@ AWS_DEFAULT_ACL = 'public-read-write'
 AWS_S3_REGION_NAME = "ap-south-1"
 
 
-
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
