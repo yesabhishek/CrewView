@@ -5,7 +5,7 @@ import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-DEBUG = True
+DEBUG = (os.environ.get('Debug_Value') == 'True')
 #(os.environ.get('Debug_Value') == 'True')
 
 SECRET_KEY = os.environ.get('Secret_CrewView')
