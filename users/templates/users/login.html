@@ -4,22 +4,19 @@
 {% providers_media_js %}
 {% block content %}
 
-<div id="particle-container">
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-
-  <div class="particle"></div>
-</div>
-<div class="content-section">
+<article>
+  <br>
+<div class="container">
   <form method="POST">
     {% csrf_token %}
     <fieldset class="form-group">
-      <legend class="border-bottom mb-4"><span class="btn-text">Sign Up</span></legend>
       {{ form|crispy }}
     </fieldset>
+
+
+    
     <div class="class-group">
-      <button class="btn-share like" type="submit">
+      <button class="btn-share greenbtn" type="submit">
         <span class="btn-text">Log In</span>
 
         <ul class="social-icons">
@@ -89,5 +86,7 @@
     Need an Account? <a class="ml-2 readnow" href="{% url 'register' %}">Sign Up Now</a>
   </small>
 </div>
-
+<br>
+<br>
+</article>
 {% endblock content %}

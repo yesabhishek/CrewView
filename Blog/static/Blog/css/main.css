@@ -14,7 +14,7 @@ body {
   color: white;
   font-family: "Montserrat";
   font-weight: 400;
-  background-color: #071e22;
+  background-color: #061202;
   margin: 0;
   padding: 0;
   padding-top: 0;
@@ -66,7 +66,7 @@ a:hover {
 
 @media screen and (max-width: 1200px) and (min-width: 768px) {
   body {
-    background-color: #0b0033;
+    background-color: #06001a;
     color: white;
   }
 }
@@ -93,7 +93,7 @@ a:hover {
   flex-direction: column;
   width: 10rem;
   height: 100vh;
-  background-color: #e8c547;
+  background-color: #2b810e;
   font-weight: 800;
   position: fixed;
   text-align: left;
@@ -102,7 +102,7 @@ a:hover {
 @media screen and (max-width: 1200px) and (min-width: 768px) {
   .xcontainer {
     width: 8rem;
-    background-color: rgb(10, 25, 109);
+    background-color: rgb(9, 20, 82);
   }
 }
 
@@ -132,9 +132,10 @@ a:hover {
   padding: 24px;
   color: white;
   font-size: 26px;
-  font-weight: bolder;
+  font-weight: 600;
   display: -ms-grid;
   display: flex;
+  font-family: "Montserrat";
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -158,7 +159,7 @@ a:hover {
   justify-items: center;
   text-align: center;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 2.5rem;
 }
 
@@ -188,13 +189,15 @@ div {
 }
 
 .content-section {
-  margin-left: 10rem;
-  padding: 20px 30px;
+  margin-left: 12rem;
+  padding: 30px 30px;
 }
 
 .article-title {
   color: white;
   display: block;
+  font-family: "Poppins";
+  font-weight: 600;
 }
 
 a.article-title:hover {
@@ -203,19 +206,31 @@ a.article-title:hover {
 }
 
 .article-content {
-  white-space: pre-line;
+  font-family: "Open Sans";
+  font-weight: 200;
+  padding-right: 10px;
+  line-height: 1.5rem;
+}
+@media screen and (max-width: 480px) and (min-width: 100px) {
+  .article-content {
+    line-height: 0.8rem;
+  }
 }
 
 .article-img {
   height: 65px;
   width: 65px;
   margin-right: 16px;
+  margin-left: 14px;
+  margin-top: 14px;
 }
 
 .article-metadata {
   padding-bottom: 1px;
   margin-bottom: 4px;
-  border-bottom: 1px solid #7272729f;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #7272725d;
 }
 
 .article-metadata a:hover {
@@ -230,10 +245,27 @@ a.article-title:hover {
 }
 
 .account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
+  height: 192px;
+  width: 192px;
+  display: relative;
+  justify-content: center;
+  align-content: center;
+  border-radius: 20px;
+  margin-left: 20rem;
+}
+
+@media screen and (max-width: 480px) and (min-width: 100px) {
+  .account-img {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 20rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 84px;
+    width: 84px;
+  }
 }
 
 @media screen and (max-width: 480px) and (min-width: 100px) {
@@ -251,7 +283,7 @@ a.article-title:hover {
 
 .readnow {
   text-decoration: none;
-  color: rgb(72, 255, 0);;
+  color: rgb(72, 255, 0);
 }
 
 @media screen and (max-width: 1200px) and (min-width: 768px) {
@@ -278,7 +310,7 @@ a.article-title:hover {
     color: white;
     font-size: 8px;
     margin-left: 6rem;
-    padding: 10px 15px;
+    padding: 30px 30px;
   }
 }
 
@@ -296,7 +328,7 @@ a.article-title:hover {
 }
 .hero .herotitle {
   font-size: 52px;
-  font-weight: 800;
+  font-weight: 600;
   font-family: Poppins;
 }
 @media screen and (max-width: 480px) and (min-width: 100px) {
@@ -378,35 +410,39 @@ a.article-title:hover {
 }
 
 .heading1 {
-  font-size: 38px;
+  font-size: 32px;
+  font-family: "Poppins";
+  font-weight: 600;
 }
 
 @media screen and (max-width: 480px) and (min-width: 100px) {
   .heading1 {
-    font-size: 24px;
+    font-size: 14px;
   }
 }
 
 @media screen and (max-width: 480px) and (min-width: 100px) {
   #works {
-    visibility: hidden;
   }
 }
 
 .postimage {
-  width: 100%;
+  width: 95%;
+
   align-content: center;
   justify-content: center;
   border: none;
+
+  border-radius: 20px;
 }
 
-.coverimg {
+#coverimg {
   justify-content: center;
   align-content: center;
-
   padding: 0;
   margin: 0;
   width: 100%;
+  height: 50%;
 }
 
 .custom-btn {
@@ -414,29 +450,34 @@ a.article-title:hover {
 }
 /* button */
 
+.greenbtn {
+  --btn-color: #00aa0e;
+}
+
+
 .like {
-  --btn-color: #3cff00ce;
+  --btn-color: #d66000;
 }
 
 .unlike {
-  --btn-color: #ffc400;
+  --btn-color: #d49c99;
 }
 
 .comment {
-  --btn-color: #00d7f3;
+  --btn-color: #db9e06;
 }
 .share {
-  --btn-color: #275efe;
+  --btn-color: #283fa4;
 }
 
 .btn-share {
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 12px 24px;
-  font-family: Poppins, sans-serif;
+  padding: 10px 18px;
+  font-family: "Poppins";
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.8rem;
   line-height: 1;
   color: white;
   background: none;
@@ -450,6 +491,15 @@ a.article-title:hover {
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+@media screen and (max-width: 480px) and (min-width: 100px) {
+  .btn-share {
+    padding: 8px 14px;
+    font-weight: 500;
+    font-size: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 .btn-share::before {
   position: absolute;
@@ -465,6 +515,17 @@ a.article-title:hover {
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+@media screen and (max-width: 480px) and (min-width: 100px) {
+  .btn-icon {
+    height: 8px;
+    width: 8px;
+  }
+
+  .social-icons {
+    height: 8px;
+    width: 8px;
+  }
+}
 .btn-share .btn-text,
 .btn-share .btn-icon {
   justify-content: center;
@@ -556,13 +617,15 @@ a.article-title:hover {
 }
 /*# sourceMappingURL=btn.css.map */
 
-.post-title{
-  color: rgb(127, 0, 211);
+.post-title {
+  color: rgb(211, 179, 0);
+  font-family: "Montserrat";
+  font-weight: 600;
 }
 
-p{
+p {
   font-size: 16px;
-  text-align: justify;
+  text-align: left;
   justify-content: center;
   align-items: center;
 }
@@ -572,8 +635,7 @@ p{
   }
 }
 
-.size{
-  
+.size {
   justify-content: center;
   align-items: center;
   position: relative;
@@ -593,6 +655,26 @@ p{
 @media screen and (max-width: 480px) and (min-width: 100px) {
   .size {
     font-size: 12px;
-    
   }
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+cardshape {
+  margin-left: 20rem;
+  margin-right: 8rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  background-color: #00181d;
+  border-radius: 20px;
+}
+
+.mail{
+  font-size: 10px;
+  font-style: italic;
 }

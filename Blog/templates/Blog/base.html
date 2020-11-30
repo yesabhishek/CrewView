@@ -1,61 +1,107 @@
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,700&family=Poppins:ital,wght@0,600;0,800;0,900;1,700&display=swap" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <meta charset="UTF-8" />
-    <!-- Favicon icons below --> 
+    <!-- Favicon icons below -->
     {% load static %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-<link rel="apple-touch-icon" sizes="180x180" href="{% static 'Blog/img/ilogo/Icon.png' %}">
-<link rel="icon" type="image/png" sizes="32x32" href="{% static 'Blog/img/ilogo/Iconsmall.png' %}">
-<link rel="icon" type="image/png" sizes="16x16" href="{% static 'Blog/img/ilogo/Icontiny.png' %}">
-<script src="https://kit.fontawesome.com/864c08f8dd.js" crossorigin="anonymous"></script>
-<link rel="manifest" href="{% static 'Blog/js/site.webmanifest' %}">
+    <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'Blog/img/ilogo/Icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'Blog/img/ilogo/Iconsmall.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static 'Blog/img/ilogo/Icontiny.png' %}"
+    />
+    <script
+      src="https://kit.fontawesome.com/864c08f8dd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="manifest" href="{% static 'Blog/js/site.webmanifest' %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% if title %}    
-    <title> {{ title }}</title>
-  {% else %}
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
     <title>CrewView</title>
-  {% endif %}
-
-    {% load static %}
+    {% endif %} {% load static %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'Blog/css/main.css' %}"
     />
-    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/8102cb32135165f45b645b600/895680605158fe2a6fe5e3413.js");</script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Blog/css/bootstrap.css' %}"
+    />
+    <script id="mcjs">
+      !(function (c, h, i, m, p) {
+        (m = c.createElement(h)),
+          (p = c.getElementsByTagName(h)[0]),
+          (m.async = 1),
+          (m.src = i),
+          p.parentNode.insertBefore(m, p);
+      })(
+        document,
+        "script",
+        "https://chimpstatic.com/mcjs-connected/js/users/8102cb32135165f45b645b600/895680605158fe2a6fe5e3413.js"
+      );
+    </script>
   </head>
   <body>
     <div class="xcontainer">
-      <div class=" container logo"> 
+      <div class="container logo">
         <a class="logo" href="{% url 'blog-home' %}">CrewView</a>
       </div>
       <div class="links">
-      {% if user.is_authenticated %}
-      <div class="profile"><a href="{% url  'post-create' %}">Create</a></div>
-      <div class="items"><a href="{% url  'blog-home' %}">Home</a></div>
-      <div class="login"><a href="{% url  'profile' %}">Profile</a></div>
-      <div class="logout" ><a href="{% url  'logout' %}">Log Out</a></div>
-      <div class="logout" ><a href="{% url  'blog-settings' %}">Settings</a></div>
-      {% else %}
-      <div class="profile" > <a href="{% url  'blog-home' %}">Home</a></div>
-      <div class="items" ><a href="{% url  'register' %}">Register</a></div>
-      <div class="login" ><a href="{% url 'login' %}">Log In</a></div>
-      <div class="contact"><a href="{% url 'about' %}">About</a></div>
-      {% endif %}
+        {% if user.is_authenticated %}
+        <div class="profile"><a href="{% url  'post-create' %}">Create</a></div>
+        <div class="items"><a href="{% url  'blog-home' %}">Home</a></div>
+        <div class="login"><a href="{% url  'profile' %}">Profile</a></div>
+        <div class="logout"><a href="{% url  'logout' %}">Log Out</a></div>
+        <div class="logout">
+          <a href="{% url  'blog-settings' %}">Settings</a>
+        </div>
+        {% else %}
+        <div class="profile"><a href="{% url  'blog-home' %}">Home</a></div>
+        <div class="items"><a href="{% url  'register' %}">Register</a></div>
+        <div class="login"><a href="{% url 'login' %}">Log In</a></div>
+        <div class="contact"><a href="{% url 'about' %}">About</a></div>
+        {% endif %}
+      </div>
     </div>
-    </div>
-   <br>
-   <br>
+    <br />
+    <br />
 
-   {% block content %}
-   {% endblock %}
+    {% block content %} {% endblock %}
 
-   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-   
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -1,32 +1,30 @@
 {% extends "Blog/base.html" %} {% block content %}
 <main>
-  <h1>Hello,{{ user.username }} <span class="wave-emoji">👋🏼</span></h1>
-  <br />
-  <div>
+  
+  <div class="container">
+    <h3 class="heading1">
+      Hello,{{ user.username }}<span class="wave-emoji">👋🏼</span>
+    </h3>
     <br />
-
-    <h4>
+    
+    <h6>
       <a class="readnow" href="{% url  'update-profile' %}">Click</a> for
       changing the Profile Settings
-    </h4>
+    </h6>
     <br />
 
-    <h4>
-      <a class="readnow" href="#">Click</a> for
-      Deleting your Account.
-    </h4>
+    <h6><a class="readnow" href="#">Click</a> for Deleting your Account.</h6>
     <br />
 
-    <h4>
-      <a class="readnow" href="{%url 'password_reset' %}">Click</a> for
-      Passowrd Reset
-    </h4>
+    <h6>
+      <a class="readnow" href="{%url 'password_reset' %}">Click</a> for Passowrd
+      Reset
+    </h6>
     <br />
 
-    <h4>
-      <a class="readnow" href="#">Click</a> for
-      changing the Profile Settings
-    </h4>
+    <h6>
+      <a class="readnow" href="#">Click</a> for changing the Profile Settings
+    </h6>
   </div>
 </main>
 {% endblock %}
